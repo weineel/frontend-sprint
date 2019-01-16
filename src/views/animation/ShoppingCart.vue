@@ -64,13 +64,14 @@
 
     methods: {
       init() {
+        // 生成商品列表
         for (let i = 0; i < 16; i++) {
           const id = i + 1
           this.goodsList.push({
             id,
             name: '商品' + id,
             desc: '描述描述描述描述' + id,
-            num: 0
+            num: 0  // 在购物车中的数量
           })
         }
       },
@@ -79,12 +80,15 @@
         item.num --
       },
       add2cart(item, $event) {
+        // 获取做类抛物线运动的物体起点位置
         this.add2cartElLeft = $event.target.getBoundingClientRect().left
         this.add2cartElBottom = this.windowHeight - $event.target.getBoundingClientRect().bottom
         item.num ++
+        // 显示类抛物线
         this.showAddIcon = true
       },
       beforeEnter(el) {
+        // 设置做类抛物线运动的物体起点位置
         el.style.left = `${this.add2cartElLeft}px`
         el.style.bottom = `${this.add2cartElBottom}px`
       },
@@ -96,7 +100,9 @@
       listenInCart() {
         // 触发购物车弹动动画
         if (!this.toggleAdd2cart) {
+          // 添加动画
           this.toggleAdd2cart = true
+          // 监听动画结束，移除动画
           this.$refs.cart.addEventListener('animationend', () => {
               this.toggleAdd2cart = false;
           })
@@ -175,6 +181,7 @@
   .parabola-enter-active
     transition .5s bottom cubic-bezier(.35, -0.55, .88, .33), .5s left linear
 
+  // 获取做类抛物线运动的物体结束位置，就是购物车图标所在位置附近。!important 是因为起点位置是使用代码添加到style上的。
   .parabola-enter-to
     bottom $cart-icon-bottom + 20px !important
     left $cart-icon-left + 10px !important

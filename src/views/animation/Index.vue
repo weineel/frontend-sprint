@@ -6,7 +6,7 @@
       <li> 突变：到目标样式的直接变化。在浏览器的devtools中调试样式就是一种突变，直接用代码修改样式也是一种突变。 </li>
       <li> 过渡：按某种规则逐渐变成目标样式。 </li>
       <li> 规则：给这些突变加上了变化规则(transition css属性，加了这个css属性的 dom 节点，再进行样式变化时就变成了有规则的变化。)。 </li>
-      <li> 局限：1. transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。 2. transition是一次性的，不能重复发生，除非一再触发。 </li>
+      <li> 局限：1. transition只有开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。 2. transition是一次性的，不能重复发生，除非一再触发。 </li>
     </ul>
     <h4> &nbsp;&nbsp;&nbsp;&nbsp; CSS 动画 <router-link to="/animation/sample">示例</router-link></h4>
     <ul>
@@ -58,7 +58,7 @@
       <li> enter 和 enter-active 同时添加到dom上，enter-to 在下一帧添加到 dom 上并且移除enter, enter-active 和 enter-to 同时移除。</li>
       <li> leave 和 leave-active 同时添加到dom上，leave-to 在下一帧添加到 dom 上并且移除leave, leave-active 和 leave-to 同时移除。</li>
       <li> 意味着最终都将会被移除。</li>
-      <li> 每个class的应用范围：enter、leave 过渡的开始状态，enter-active、leave-active 过渡时间间隔和方式（transition、transform、animation等过渡css），enter-to、leave-to 过渡的结束状态。</li>
+      <li> 每个class的应用范围：enter、leave 过渡的开始状态，enter-active、leave-active 过渡时间间隔和方式（transition、animation），enter-to、leave-to 过渡的结束状态。</li>
       <li> 上一条原因：1. 更好的语义。 2. 在插入元素（如 .appendChild()）或改变属性 display: none 后立即使用过渡, 元素将视为没有开始状态，始终处于结束状态。简单的解决办法，改变属性前用 window.setTimeout() 延迟几毫秒。 </li>
       <li> 取消回调：enter 过渡没有完成就进行 leave 过渡会调用 enterCancelled 回调。同样，leave 过渡没有完成就进行 enter 过渡会调用 leaveCancelled 回调。监听 leaveCancelled 需要使用 v-show 进行切换。</li>
       <div>
