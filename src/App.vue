@@ -5,7 +5,8 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/animation">Animation</router-link> |
       <router-link to="/websocket">WebSocket</router-link> |
-      <router-link to="/test-ele">TestEle</router-link>
+      <router-link to="/test-ele">TestEle</router-link> |
+      <router-link to="/scroll2dom">Scroll2Dom</router-link>
     </div>
     <router-view/>
   </div>

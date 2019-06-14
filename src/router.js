@@ -62,6 +62,11 @@ export default new Router({
       path: '/test-ele',
       name: 'TestEle',
       component: () => import('./views/TestEle.vue')
+    },
+    {
+      path: '/scroll2dom',
+      name: 'Scroll2Dom',
+      component: () => import('./views/Scroll2Dom.vue')
     }
   ]
 })
