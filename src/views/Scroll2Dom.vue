@@ -8,6 +8,11 @@
 </template>
 
 <script>
+// 获取窗口
+let windowElement = null
+// eslint-disable-next-line no-cond-assign
+windowElement = ((windowElement = document.documentElement) || (windowElement = document.body.parentNode)) && typeof windowElement.scrollLeft === 'number' ? windowElement : document.body
+
 function getElementTop(element) {
   let actualTop = element.offsetTop
   let current = element.offsetParent
@@ -41,7 +46,7 @@ export default {
     // init() {
     // },
     scroll2anchor() {
-      document.documentElement.scrollTop = getElementTop(this.$refs.anchor)
+      windowElement.scrollTop = getElementTop(this.$refs.anchor)
     }
   }
 }
