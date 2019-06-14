@@ -57,6 +57,11 @@ export default new Router({
       path: '/websocket',
       name: 'websocket',
       component: () => import('./views/WebSocket.vue')
+    },
+    {
+      path: '/test-ele',
+      name: 'TestEle',
+      component: () => import('./views/TestEle.vue')
     }
   ]
 })

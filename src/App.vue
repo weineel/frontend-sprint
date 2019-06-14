@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/animation">Animation</router-link> |
-      <router-link to="/websocket">WebSocket</router-link>
+      <router-link to="/websocket">WebSocket</router-link> |
+      <router-link to="/test-ele">TestEle</router-link>
     </div>
     <router-view/>
   </div>
